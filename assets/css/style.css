@@ -86,7 +86,7 @@ strong{color:var(--text);font-weight:700}
 .btn--primary:hover{background:var(--accent-hover);transform:translateY(-2px)}
 .btn--ghost{background:transparent;border-color:var(--border-strong);color:var(--text)}
 .btn--ghost:hover{border-color:var(--accent);color:var(--accent)}
-.btn--block{width:100%;justify-content:center}
+.btn--block{width:100%;justify-content:center;white-space:normal;text-align:center;overflow-wrap:break-word;word-break:break-word}
 .btn--lg{padding:19px 38px;font-size:1rem}
 
 /* ---------- Header / Nav ---------- */
@@ -241,7 +241,6 @@ strong{color:var(--text);font-weight:700}
   display:flex;align-items:center;justify-content:center;padding:20px;
   box-shadow:var(--shadow);transition:.3s;
 }
-@media(max-width:480px){.sponsor-logo{width:calc(50% - 12px);height:90px;padding:14px}}
 .sponsor-logo:hover{transform:translateY(-5px) scale(1.02)}
 .sponsor-logo img{max-height:100%;max-width:100%;width:auto;object-fit:contain}
 .text-logo{font-family:var(--font-head);font-weight:800;color:#16284E;text-transform:uppercase;font-size:1rem;line-height:1.15;text-align:center;letter-spacing:.02em}
@@ -249,7 +248,7 @@ strong{color:var(--text);font-weight:700}
 .footer-sponsors__row .text-logo{font-size:.78rem;color:#16284E}
 
 /* ---------- Donation tiers ---------- */
-.amount-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.amount-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media(max-width:680px){.amount-grid{grid-template-columns:1fr}}
 .amount{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:.25s}
 .amount:hover{border-color:var(--accent);background:var(--surface-2)}
@@ -257,10 +256,10 @@ strong{color:var(--text);font-weight:700}
 .amount__txt{font-size:.92rem;color:var(--muted)}
 
 /* two donate options */
-.give-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media(max-width:780px){.give-grid{grid-template-columns:1fr}}
-@media(max-width:480px){.give-card{padding:24px 16px}}
-.give-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:38px 34px;display:flex;flex-direction:column;box-sizing:border-box;width:100%}
+.give-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+@media(max-width:780px){.give-grid{grid-template-columns:minmax(0,1fr)}}
+.give-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:38px 34px;display:flex;flex-direction:column;min-width:0;overflow-wrap:break-word;word-break:break-word}
+@media(max-width:480px){.give-card{padding:28px 20px}}
 .give-card__num{font-family:var(--font-display);font-size:1.6rem;color:var(--accent-soft);-webkit-text-stroke:1px var(--accent);color:transparent;margin-bottom:14px}
 .give-card h3{font-size:1.4rem;text-transform:uppercase;margin-bottom:14px}
 .give-card p{flex:1;margin-bottom:24px}
