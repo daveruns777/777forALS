@@ -72,6 +72,232 @@
   </div>
 </section>
 
+<!-- Photo Gallery -->
+<section class="section photo-gallery-section">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Through The Years</span>
+      <h2 class="section-title" style="margin-bottom:40px">Photo Gallery</h2>
+    </div>
+    <div class="gallery-carousel" id="galleryCarousel">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide">
+          <img src="assets/images/01.jpg" alt="2008: Dave &amp; O.J. at the Fiesta 5K">
+          <p class="gallery-caption">2008: Dave &amp; O.J. at the Fiesta 5K to benefit ALS research</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/02.jpg" alt="2008: Dave running the Baltimore Marathon Team Relay">
+          <p class="gallery-caption">2008: Dave honoring O.J. while running the Baltimore Marathon Team Relay</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/03.jpg" alt="2009: O.J. &amp; Dave at the Fiesta 5K">
+          <p class="gallery-caption">2009: O.J. &amp; Dave at the Fiesta 5K to benefit ALS research</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/04.jpg" alt="2012: Dave after completing the Baltimore Marathon">
+          <p class="gallery-caption">2012: Dave after completing the Baltimore Marathon &mdash; ALL THINGS ARE POSSIBLE</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/05.jpg" alt="2013: O.J. &amp; Dave celebrating the Ravens AFC Championship">
+          <p class="gallery-caption">2013: O.J. &amp; Dave celebrating the Ravens' AFC Championship in the postgame locker room</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/06.jpg" alt="2013: Super Bowl XLVII ring ceremony">
+          <p class="gallery-caption">2013: Dave, O.J. &amp; Dave's wife Angie at the Super Bowl XLVII championship ring ceremony</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/07.jpg" alt="2023: President Obama greets O.J. &amp; Chanda">
+          <p class="gallery-caption">2023: President Obama greets O.J. &amp; his wife Chanda during the Ravens' White House visit</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/08.jpg" alt="2015: Brigance Brigade 5.7K">
+          <p class="gallery-caption">2015: The second annual Brigance Brigade 5.7K</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/09.jpg" alt="2018: Dave's family at the Baltimore Half Marathon">
+          <p class="gallery-caption">2018: Dave's family at the Baltimore Half Marathon start line</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/10.jpg" alt="2022: Dave ran the Marine Corps Marathon 50K">
+          <p class="gallery-caption">2022: Dave ran the Marine Corps Marathon 50K to support his friend who was battling breast cancer</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/11.jpg" alt="2022: Dave ringing the PR bell after the Marine Corps Marathon 50K">
+          <p class="gallery-caption">2022: Dave ringing the PR bell with his two older daughters after the Marine Corps Marathon 50K</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/12.jpg" alt="2025: Dave crossing the finish line of the Baltimoron-a-Thon">
+          <p class="gallery-caption">2025: Dave crossing the finish line of the Baltimoron-a-Thon (and high-fiving Poe)</p>
+        </div>
+        <div class="gallery-slide">
+          <img src="assets/images/13.jpg" alt="2026: Dave finished in 1st place at the Brigance Brigade 5.7K">
+          <p class="gallery-caption">2026: Dave finished in 1st place to win the Brigance Brigade 5.7K</p>
+        </div>
+      </div>
+      <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/></svg>
+      </button>
+      <button class="gallery-arrow gallery-arrow--next" id="galleryNext" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z" fill="currentColor"/></svg>
+      </button>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- Photo Gallery Carousel ---------- */
+.photo-gallery-section { 
+  padding-top: clamp(0px, 0vw, 10px);
+  padding-bottom: clamp(48px,6vw,84px); 
+}
+.gallery-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.gallery-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+.gallery-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery-slide img {
+  width: 100%;
+  aspect-ratio: 1154/694;
+  object-fit: contain;
+  display: block;
+  background: #f5f5f5;
+}
+.gallery-caption {
+  font-family: var(--font-body);
+  font-size: clamp(.88rem, 1.2vw, 1.04rem);
+  color: var(--muted);
+  text-align: center;
+  padding: 18px 24px 22px;
+  line-height: 1.5;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Arrows */
+.gallery-arrow {
+  position: absolute;
+  top: calc(50% - 35px);
+  transform: translateY(-50%);
+  background: rgba(22,43,85,.75);
+  border: 1px solid var(--border-strong);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .25s, transform .25s;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+}
+.gallery-arrow:hover {
+  background: var(--accent);
+  color: var(--navy);
+  transform: translateY(-50%) scale(1.08);
+}
+.gallery-arrow--prev { left: 14px; }
+.gallery-arrow--next { right: 14px; }
+/* Dots */
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 24px 20px;
+}
+.gallery-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  border: none;
+  cursor: pointer;
+  transition: background .25s, transform .25s;
+  padding: 0;
+}
+.gallery-dot:hover { background: var(--accent-hover); }
+.gallery-dot.active {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+/* Responsive */
+@media(max-width:800px){
+  .gallery-arrow { width: 38px; height: 38px; }
+  .gallery-arrow--prev { left: 8px; }
+  .gallery-arrow--next { right: 8px; }
+  .gallery-arrow svg { width: 22px; height: 22px; }
+  .gallery-caption { padding: 14px 16px 18px; font-size: .88rem; min-height: 60px; }
+  .gallery-dot { width: 9px; height: 9px; }
+}
+</style>
+
+<script>
+(function(){
+  const track = document.getElementById('galleryTrack');
+  const slides = track.querySelectorAll('.gallery-slide');
+  const dotsContainer = document.getElementById('galleryDots');
+  const prevBtn = document.getElementById('galleryPrev');
+  const nextBtn = document.getElementById('galleryNext');
+  const total = slides.length;
+  let current = 0;
+  let autoTimer;
+
+  // Build dots
+  for(let i = 0; i < total; i++){
+    const dot = document.createElement('button');
+    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i+1));
+    dot.addEventListener('click', function(){ goTo(i); resetAuto(); });
+    dotsContainer.appendChild(dot);
+  }
+  const dots = dotsContainer.querySelectorAll('.gallery-dot');
+
+  function goTo(idx){
+    current = ((idx % total) + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d,i){ d.classList.toggle('active', i === current); });
+  }
+
+  prevBtn.addEventListener('click', function(){ goTo(current - 1); resetAuto(); });
+  nextBtn.addEventListener('click', function(){ goTo(current + 1); resetAuto(); });
+
+  function startAuto(){ autoTimer = setInterval(function(){ goTo(current + 1); }, 4000); }
+  function resetAuto(){ clearInterval(autoTimer); startAuto(); }
+
+  // Swipe support for mobile
+  let startX = 0;
+  track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e){
+    var diff = startX - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 40){
+      if(diff > 0) goTo(current + 1); else goTo(current - 1);
+      resetAuto();
+    }
+  }, {passive:true});
+
+  startAuto();
+})();
+</script>
+
 <section class="cta-band section--tight">
   <div class="amber-rule" style="position:absolute;top:0;left:0;right:0"></div>
   <div class="wrap reveal">
