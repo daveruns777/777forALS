@@ -1,20 +1,16 @@
 # Run the World for ALS — Website
 
-A modern, sleek, multi-page static website for **777forALS.com** — Dave Lang's World Marathon
-Challenge (7 marathons, 7 continents, 7 days) benefiting the Brigance Brigade Foundation.
-
-Rebuilt from the original Google Sites content with a dark, cinematic design inspired by
-alexruns777.com and a tiered sponsor layout inspired by katiespotz.com.
+A website for **777forALS.com** — Dave Lang's World Marathon Challenge (7 marathons on 7 continents in 7 days) benefiting the Brigance Brigade Foundation and people living with ALS.
 
 ## Pages
 | File | Page |
 |------|------|
 | `index.html` | Home — hero, custom countdown clock, intro, videos, sponsor strip |
 | `mission.html` | Mission — World Marathon Challenge + 7-leg continent itinerary |
-| `motivation.html` | Motivation — O.J. Brigance story + 6 motivational videos |
+| `story.html` | The Story — O.J. Brigance story + 6 motivational videos |
 | `about.html` | About — Dave Lang's story & photos |
-| `sponsors.html` | Corporate Sponsors — tiered logos + sponsorship packages |
-| `donate.html` | Donate — two giving options + meaningful gift amounts |
+| `sponsors.html` | Corporate Sponsors — tiered logos + key donors |
+| `donate.html` | Donate — giving option + meaningful gift amounts |
 
 ## Folder structure
 ```
